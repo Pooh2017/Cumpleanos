@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background-color: #ffcccb;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 40px;
+            max-width: 400px;
+        }
+
+        .card h1 {
+            color: #ff4081;
+            font-size: 36px;
+        }
+
+        .card p {
+            font-size: 20px;
+            color: #555;
+        }
+
+        .balloons {
+            margin-top: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>¡Feliz Cumpleaños!</h1>
+        <p>Te deseo un día lleno de alegría, risas y muchos buenos momentos.</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Balloons_Bunch.svg/1200px-Balloons_Bunch.svg.png" alt="Globos de cumpleaños" class="balloons" width="150">
+    </div>
+</body>
+</html>
