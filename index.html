@@ -2,61 +2,216 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz Cumpleaños</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ajustar la escala inicial -->
+    <title>¡Feliz Cumpleaños!</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f8ff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+            background-color: #e8d7f9;
+            color: #333;
+            font-size: 14px; /* Reducir tamaño de fuente */
         }
-
-        .card {
-            background-color: #ffcccb;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        .hero {
+            background: linear-gradient(135deg, #9c27b0, #6a1b9a);
+            color: white;
+            padding: 20px 10px; /* Reducir padding */
             text-align: center;
-            padding: 40px;
-            max-width: 400px;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            animation: fadeIn 1s ease-in-out;
         }
-
-        .card h1 {
-            color: #ff4081;
-            font-size: 36px;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-
-        .card p {
-            font-size: 20px;
-            color: #555;
+        .card {
+            margin: 10px 0; /* Reducir márgenes */
+            transition: transform 0.2s;
+            border: none;
         }
-
-        .balloons {
-            margin-top: 20px;
-            animation: float 3s ease-in-out infinite;
+        .card:hover {
+            transform: scale(1.03); /* Reducir escala del hover */
         }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0);
+        .card img {
+            border-radius: 10px;
+            height: 200px; /* Ajustar altura de las imágenes */
+            object-fit: cover; /* Mantener la relación de aspecto */
+        }
+        footer {
+            margin-top: 20px; /* Reducir margen superior */
+            font-size: 14px; /* Reducir tamaño de fuente */
+            color: #777;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 10px 0; /* Reducir margen */
+        }
+        .gallery img {
+            margin: 5px;
+            border-radius: 10px;
+            max-width: calc(25% - 10px); /* 4 imágenes por fila */
+            height: auto;
+            cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
+        }
+        @media (max-width: 768px) {
+            .gallery img {
+                max-width: calc(50% - 10px); /* 2 imágenes por fila en pantallas más pequeñas */
             }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0);
-            }
+        }
+        .carousel img {
+            width: 100%; /* Asegura que las imágenes del carrusel tengan el mismo tamaño */
+            height: auto; /* Mantiene la relación de aspecto */
+        }
+        /* Estilos para el modal */
+        .modal-content {
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            color: #333;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .modal-header {
+            border-bottom: none;
+        }
+        .modal-title {
+            color: #6a1b9a; /* Cambiar color del título */
+            font-weight: bold;
+        }
+        .modal-footer {
+            border-top: none;
+        }
+        .coupon {
+            background-color: #fff;
+            border: 2px dashed #9c27b0; /* Estilo del borde */
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px; /* Margen superior */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .coupon h3 {
+            color: #9c27b0; /* Color del título del cupón */
         }
     </style>
 </head>
 <body>
-    <div class="card">
+    <div class="hero">
         <h1>¡Feliz Cumpleaños!</h1>
-        <p>Te deseo un día lleno de alegría, risas y muchos buenos momentos.</p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Balloons_Bunch.svg/1200px-Balloons_Bunch.svg.png" alt="Globos de cumpleaños" class="balloons" width="150">
+        <p>Aunque la distancia nos separe, siempre estás en mi corazón. 💖</p>
     </div>
+
+    <div class="container text-center mt-3"> <!-- Reducir margen superior -->
+        <h2 class="mb-3">Mensajes Bonitos</h2> <!-- Reducir margen inferior -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/image/im20.jpg" class="card-img-top" alt="Mensaje 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Siempre en mi corazón 🌍</h5>
+                        <p class="card-text">La distancia no puede borrar el cariño que siento por ti. ¡Te extraño muchísimo! 🌈</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/image/momento.jpg" class="card-img-top" alt="Mensaje 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Recuerdos que calientan el alma 🌟</h5>
+                        <p class="card-text">Cada recuerdo contigo me hace sonreír. Espero que tu día esté lleno de amor, aunque esté lejos. 🎁</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="/image/familia.jpg" class="card-img-top" alt="Mensaje 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Siempre juntos en espíritu 🤗</h5>
+                        <p class="card-text">La distancia es solo un desafío. Siempre estaré contigo en pensamiento y corazón. ¡Feliz cumpleaños! 🎉</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="mt-4">Galería de Recuerdos</h2> <!-- Reducir margen superior -->
+
+        <!-- Carousel -->
+        <div id="galleryCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/image/14d99615-33b3-486b-9562-cfdc2e94bba6.jpg" class="d-block" alt="Recuerdo 1" onclick="showMessage('¡A pesar de la distancia, siempre estoy contigo! 💫 Cada año contigo es una celebración, incluso desde lejos. 🎈')">
+                </div>
+                <div class="carousel-item">
+                    <img src="/image/951048de-77ee-4774-a4af-4e74bd1aa171.jpg" class="d-block" alt="Recuerdo 2" onclick="showMessage('Tu alegría ilumina incluso los días más oscuros. ¡Te quiero muchísimo, a pesar de la distancia! 😄💕')">
+                </div>
+                <div class="carousel-item">
+                    <img src="/image/im10.jpg" class="d-block" alt="Recuerdo 3" onclick="showMessage('Aunque esté lejos, celebro cada instante de tu vida. 🎂❤️ ¡Te mando un abrazo enorme!')">
+                </div>
+                <!-- Agrega más items aquí como en tu ejemplo anterior -->
+            </div>
+            <a class="carousel-control-prev" href="#galleryCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#galleryCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+
+        <h2 class="mt-4">Más Recuerdos</h2> <!-- Reducir margen superior -->
+        <div class="gallery">
+            <img src="/image/14d99615-33b3-486b-9562-cfdc2e94bba6.jpg" alt="Recuerdo 1" onclick="showMessage('A pesar de la distancia, siempre estás en mi corazón. ¡Feliz cumpleaños! 🎁🌟')">
+            <img src="/image/951048de-77ee-4774-a4af-4e74bd1aa171.jpg" alt="Recuerdo 2" onclick="showMessage('Cada día lejos de ti me hace valorar aún más nuestra amistad. 💖 ¡Disfruta de tu día!')">
+            <img src="/image/im10.jpg" alt="Recuerdo 3" onclick="showMessage('Tu risa es la melodía que me acompaña a la distancia. ¡Feliz cumpleaños! 🎶😊')">
+            <img src="/image/im11.jpg" alt="Recuerdo 4" onclick="showMessage('Aunque no pueda estar contigo, mi corazón celebra contigo. 🎊🎉 ¡Te quiero mucho!')">
+            <img src="/image/im12.jpg" alt="Recuerdo 5" onclick="showMessage('La distancia es solo un número, y tú significas el mundo para mí. 🌍❤️ ¡Feliz cumpleaños!')">
+            <img src="/image/im13.jpg" alt="Recuerdo 6" onclick="showMessage('Recuerda que siempre estoy aquí, incluso a kilómetros de distancia. ¡Feliz cumpleaños! 🎈💖')">
+            <img src="/image/im14.jpg" alt="Recuerdo 7" onclick="showMessage('Cada recuerdo contigo es un tesoro. ¡Feliz cumpleaños! 🎁✨')">
+            <img src="/image/im15.jpg" alt="Recuerdo 8" onclick="showMessage('Tu amor y amistad son un tesoro que valoro profundamente. 🎁💖')">
+            <img src="/image/im16.jpg" alt="Recuerdo 9" onclick="showMessage('Cada momento contigo es un regalo que atesoro, incluso desde lejos. ¡Feliz cumpleaños! 🎊')">
+        </div>
+
+        <!-- Cupón de Regalo -->
+        <div class="coupon">
+            <h3>🎉 Cupón de Regalo 🎁</h3>
+            <p>Este cupón es válido para una sorpresa especial que disfrutarás cuando nos volvamos a ver. ¡No puedo esperar para compartir momentos contigo!</p>
+            <p><strong>¡Feliz cumpleaños una vez más! Te quiero mucho! 💖</strong></p>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="messageModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="messageModalLabel">¡Feliz Cumpleaños!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="modalBody">
+                        <!-- Mensaje se insertará aquí -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-4"> <!-- Reducir margen superior -->
+        <p>&copy; 2024 Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function showMessage(message) {
+            document.getElementById("modalBody").innerText = message;
+            $('#messageModal').modal('show');
+        }
+    </script>
 </body>
 </html>
